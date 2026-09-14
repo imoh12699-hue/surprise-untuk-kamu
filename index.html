@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Kamu ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #24000c, #720024, #d4145a);
+    color: white;
+    min-height: 100vh;
+
+    /* BISA SCROLL */
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ================= SLIDE ================= */
+
+.slide {
+    display: none;
+    min-height: 100vh;
+    padding: 25px 18px;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.slide.active {
+    display: flex;
+}
+
+/* ================= CARD ================= */
+
+.card {
+    width: 100%;
+    max-width: 430px;
+
+    padding: 30px 22px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.13);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.35);
+}
+
+/* ================= TEXT ================= */
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #ffe8ef;
+}
+
+/* ================= HEART ================= */
+
+.heart {
+    font-size: 82px;
+    margin-bottom: 18px;
+
+    animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+/* ================= BUTTON ================= */
+
+button {
+    margin-top: 25px;
+
+    border: none;
+
+    padding: 14px 27px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #a5003b;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,0.2);
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+/* ================= SLIDER ================= */
+
+#nilaiCinta {
+    font-size: 58px;
+    font-weight: bold;
+
+    margin: 15px 0;
+}
+
+input[type="range"] {
+    width: 100%;
+
+    margin-top: 15px;
+
+    accent-color: #ff9fbc;
+}
+
+#pesanCinta {
+    margin-top: 20px;
+}
+
+/* ================= FOTO ================= */
+
+.photo-number {
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.75;
+
+    margin-bottom: 15px;
+}
+
+.memory-photo {
+    display: block;
+
+    width: 100%;
+
+    max-height: 58vh;
+
+    object-fit: contain;
+
+    border-radius: 22px;
+
+    margin: 0 auto 20px auto;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.4);
+}
+
+.caption {
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+/* ================= FINAL ================= */
+
+.final-card {
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+}
+
+.final-card p {
+    text-align: center;
+}
+
+.final-heart {
+    font-size: 75px;
+
+    animation: beat 1.2s infinite;
+}
+
+.small {
+    font-size: 13px;
+
+    opacity: 0.6;
+
+    margin-top: 25px;
+}
+
+/* ================= FLOATING HEART ================= */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        fly 5s linear forwards;
+}
+
+@keyframes fly {
+
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================================================= -->
+<!-- SLIDE 1 : PEMBUKA -->
+<!-- ================================================= -->
+
+<section class="slide active" id="slide1">
+
+    <div class="card">
+
+        <div class="heart">
+            ❤️
+        </div>
+
+        <h1>
+            Hai, Kamu...
+        </h1>
+
+        <p>
+            Ada sesuatu yang ingin aku sampaikan.
+            <br><br>
+
+            Mungkin sederhana,
+            tapi aku buat ini khusus untuk kamu. 🥹❤️
+        </p>
+
+        <button onclick="nextSlide()">
+            Buka pesannya 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- SLIDE 2 : PESAN -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide2">
+
+    <div class="card">
+
+        <div class="heart">
+            💗
+        </div>
+
+        <h2>
+            Untuk Kamu ❤️
+        </h2>
+
+        <p>
+            Terima kasih sudah hadir di hidupku.
+            <br><br>
+
+            Terima kasih untuk setiap cerita,
+            perhatian, tawa, dan hal-hal kecil
+            yang mungkin terlihat sederhana,
+            tapi ternyata berarti begitu banyak.
+            <br><br>
+
+            Aku mungkin nggak selalu pandai
+            mengungkapkan semuanya,
+            tapi aku ingin kamu tahu...
+            kehadiranmu benar-benar berarti.
+        </p>
+
+        <button onclick="nextSlide()">
+            Lanjut ➜
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- SLIDE 3 : SLIDER CINTA -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide3">
+
+    <div class="card">
+
+        <div class="heart">
+            🥹❤️
+        </div>
+
+        <h2>
+            Seberapa besar cintamu padaku?
+        </h2>
+
+        <div id="nilaiCinta">
+            50%
+        </div>
+
+        <input
+            type="range"
+            id="sliderCinta"
+            min="0"
+            max="100"
+            value="50"
+            oninput="ubahCinta()"
+        >
+
+        <p id="pesanCinta">
+            Lumayan... tapi aku mau lebih 😆❤️
+        </p>
+
+        <button onclick="nextSlide()">
+            Lanjut ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- SLIDE 4 : BUKA KENANGAN -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide4">
+
+    <div class="card">
+
+        <div class="heart">
+            💝
+        </div>
+
+        <h2>
+            Sekarang waktunya melihat kenangan kita
+        </h2>
+
+        <p>
+            Ada beberapa foto yang aku pilih
+            khusus untuk mengingatkan kita
+            pada cerita-cerita yang pernah kita lewati.
+            <br><br>
+
+            Satu per satu ya...
+            jangan langsung di-skip. 😭❤️
+        </p>
+
+        <button onclick="nextSlide()">
+            Buka kenangan ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOTO 1 -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide5">
+
+    <div class="card">
+
+        <div class="photo-number">
+            KENANGAN 1 / 8
+        </div>
+
+        <img
+            src="foto/IMG_20260901_123456.jpg"
+            class="memory-photo"
+            alt="Kenangan 1"
+        >
+
+        <p class="caption">
+            “Salah satu kenangan yang selalu
+            bikin aku tersenyum. ❤️”
+        </p>
+
+        <button onclick="nextSlide()">
+            NEXT ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOTO 2 -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide6">
+
+    <div class="card">
+
+        <div class="photo-number">
+            KENANGAN 2 / 8
+        </div>
+
+        <img
+            src="foto/IMG_20260901_123457.jpg"
+            class="memory-photo"
+            alt="Kenangan 2"
+        >
+
+        <p class="caption">
+            “Setiap foto punya cerita,
+            dan aku senang pernah punya
+            cerita ini bersamamu. 🥹❤️”
+        </p>
+
+        <button onclick="nextSlide()">
+            NEXT ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOTO 3 -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide7">
+
+    <div class="card">
+
+        <div class="photo-number">
+            KENANGAN 3 / 8
+        </div>
+
+        <img
+            src="foto/IMG_20260901_123458.jpg"
+            class="memory-photo"
+            alt="Kenangan 3"
+        >
+
+        <p class="caption">
+            “Mungkin sederhana,
+            tapi buatku momen seperti ini
+            sangat berarti. 💗”
+        </p>
+
+        <button onclick="nextSlide()">
+            NEXT ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOTO 4 -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide8">
+
+    <div class="card">
+
+        <div class="photo-number">
+            KENANGAN 4 / 8
+        </div>
+
+        <img
+            src="foto/IMG_20260901_123459.jpg"
+            class="memory-photo"
+            alt="Kenangan 4"
+        >
+
+        <p class="caption">
+            “Kalau waktu bisa diulang,
+            aku tetap mau mengingat
+            momen ini. ❤️”
+        </p>
+
+        <button onclick="nextSlide()">
+            NEXT ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOTO 5 -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide9">
+
+    <div class="card">
+
+        <div class="photo-number">
+            KENANGAN 5 / 8
+        </div>
+
+        <img
+            src="foto/IMG_20260901_123460.jpg"
+            class="memory-photo"
+            alt="Kenangan 5"
+        >
+
+        <p class="caption">
+            “Terima kasih sudah menjadi bagian
+            dari cerita indah ini. 🥹❤️”
+        </p>
+
+        <button onclick="nextSlide()">
+            NEXT ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOTO 6 -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide10">
+
+    <div class="card">
+
+        <div class="photo-number">
+            KENANGAN 6 / 8
+        </div>
+
+        <img
+            src="foto/IMG_20260901_123461.jpg"
+            class="memory-photo"
+            alt="Kenangan 6"
+        >
+
+        <p class="caption">
+            “Semoga masih banyak cerita
+            yang bisa kita tambahkan nanti. ❤️”
+        </p>
+
+        <button onclick="nextSlide()">
+            NEXT ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOTO 7 -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide11">
+
+    <div class="card">
+
+        <div class="photo-number">
+            KENANGAN 7 / 8
+        </div>
+
+        <img
+            src="foto/IMG_20260901_123462.jpg"
+            class="memory-photo"
+            alt="Kenangan 7"
+        >
+
+        <p class="caption">
+            “Dari banyaknya hal yang terjadi,
+            aku bersyukur pernah punya
+            momen ini. 💕”
+        </p>
+
+        <button onclick="nextSlide()">
+            NEXT ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- FOTO 8 -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide12">
+
+    <div class="card">
+
+        <div class="photo-number">
+            KENANGAN 8 / 8
+        </div>
+
+        <img
+            src="foto/IMG_20260901_123463.jpg"
+            class="memory-photo"
+            alt="Kenangan 8"
+        >
+
+        <p class="caption">
+            “Dan ini menjadi salah satu
+            kenangan yang ingin selalu
+            aku simpan. ❤️”
+        </p>
+
+        <button onclick="nextSlide()">
+            Pesan terakhir 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================================= -->
+<!-- SLIDE TERAKHIR -->
+<!-- ================================================= -->
+
+<section class="slide" id="slide13">
+
+    <div class="card final-card">
+
+        <div class="final-heart">
+            💖
+        </div>
+
+        <h2>
+            Terima Kasih ❤️
+        </h2>
+
+        <p>
+
+            Terima kasih sudah jadi orang
+            paling berarti di hidupku.
+            <br><br>
+
+            Terima kasih sudah hadir,
+            bertahan, dan menjadi salah satu
+            alasan hari-hariku terasa lebih indah.
+            <br><br>
+
+            Aku nggak tahu sejauh apa
+            cerita kita akan berjalan,
+            tapi selama masih ada kesempatan,
+            aku ingin terus menjaga
+            cerita kecil yang kita punya.
+            <br><br>
+
+            Kalau suatu hari kamu bertanya
+            seberapa besar aku sayang kamu,
+            mungkin aku nggak akan bisa
+            menjawabnya dengan angka.
+            <br><br>
+
+            Karena beberapa hal memang
+            terlalu besar untuk dihitung. 🥹❤️
+
+            <br><br>
+
+            Dan kalau boleh punya satu permintaan...
+            semoga di banyak cerita setelah ini,
+            aku masih bisa menemukan kamu
+            di dalamnya.
+            <br><br>
+
+            <b>
+                Kalau kamu adalah rumah,
+                semoga aku selalu punya
+                alasan untuk pulang. ❤️
+            </b>
+
+            <br><br>
+
+            <b>
+                Tetap jadi kamu yang aku kenal,
+                ya. 🥹❤️
+            </b>
+
+            <br><br>
+
+            <b>
+                I love you, always. ❤️
+            </b>
+
+        </p>
+
+        <div class="small">
+            Dibuat dengan hati, khusus untuk kamu ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =========================================
+   SISTEM SLIDE
+========================================= */
+
+let slideSekarang = 1;
+
+function nextSlide() {
+
+    document
+        .getElementById("slide" + slideSekarang)
+        .classList.remove("active");
+
+    slideSekarang++;
+
+    if (slideSekarang > 13) {
+        slideSekarang = 1;
+    }
+
+    document
+        .getElementById("slide" + slideSekarang)
+        .classList.add("active");
+
+    /* kembali ke atas setiap ganti slide */
+    window.scrollTo(0, 0);
+}
+
+
+/* =========================================
+   SLIDER CINTA
+========================================= */
+
+function ubahCinta() {
+
+    let nilai =
+        document.getElementById("sliderCinta").value;
+
+    document.getElementById("nilaiCinta")
+        .innerText = nilai + "%";
+
+
+    let pesan = "";
+
+
+    if (nilai < 20) {
+
+        pesan =
+        "Waduh... kecil sekali 😭";
+
+    }
+
+    else if (nilai < 40) {
+
+        pesan =
+        "Segini doang? Tambah sedikit dong 😭❤️";
+
+    }
+
+    else if (nilai < 60) {
+
+        pesan =
+        "Lumayan... tapi aku mau lebih 😆❤️";
+
+    }
+
+    else if (nilai < 80) {
+
+        pesan =
+        "Nahhh, mulai kelihatan sayangnya ❤️";
+
+    }
+
+    else if (nilai < 100) {
+
+        pesan =
+        "Hampir penuh! Jangan berhenti 😭❤️";
+
+    }
+
+    else {
+
+        pesan =
+        "100%? Nah, ini baru yang aku tunggu! 🥹❤️";
+
+    }
+
+
+    document.getElementById("pesanCinta")
+        .innerText = pesan;
+
+}
+
+
+/* =========================================
+   HATI TERBANG
+========================================= */
+
+setInterval(function() {
+
+    let hati =
+        document.createElement("div");
+
+    hati.className =
+        "floating-heart";
+
+    hati.innerText =
+        Math.random() > 0.5
+        ? "❤️"
+        : "💗";
+
+
+    hati.style.left =
+        Math.random() * 100 + "vw";
+
+
+    hati.style.fontSize =
+        (15 + Math.random() * 20) + "px";
+
+
+    document.body.appendChild(hati);
+
+
+    setTimeout(function() {
+
+        hati.remove();
+
+    }, 5000);
+
+
+}, 700);
+
+</script>
+
+</body>
+</html>
